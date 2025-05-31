@@ -9,3 +9,5 @@ yfinance
 beautifulsoup4
 requests
 nltk
+plotly
+joblib
