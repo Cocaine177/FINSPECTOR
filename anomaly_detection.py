@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 import joblib
 
 # Get the directory where this script is located
@@ -7,16 +7,15 @@ script_dir = Path(__file__).parent
 models_dir = script_dir / "Models"
 
 # Model paths
-MODEL_PATH = models_dir / "rf_stock_model.pkl"
+model_path = os.path.join(os.path.dirname(__file__), "rf_stock_model.pkl") 
 FEATURES_PATH = models_dir / "feature_names.pkl"
 
 # Load model and feature names
+
 try:
-    model = joblib.load(MODEL_PATH)
-    feature_names = joblib.load(FEATURES_PATH)
+    model = joblib.load(model_path)
 except Exception as e:
     raise RuntimeError(f"Failed to load model files: {str(e)}")
-
 
 def detect_anomalies(df, threshold=0.7):
     """Detect anomalies using the trained model"""
