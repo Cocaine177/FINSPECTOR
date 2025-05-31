@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+scikit-learn
+textblob
+matplotlib
+seaborn
+yfinance
+beautifulsoup4
+requests
+nltk
